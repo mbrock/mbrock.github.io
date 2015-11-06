@@ -14,7 +14,7 @@ x { text-transform: lowercase; font-variant: small-caps; }
 grep -oE "[[(]?<em>[^<]+</em>([ ',-]\([^)]+\)|([ ',-]+(\w)+))+[.)\\]]*" |
 sed -r -e "s/^[[(]//" -e "s/(\)|\])$//" |
 sed -e "s/<em>.*disclaimer/<em>disclaimer/i" |
-sort | uniq -i |
+sort |
 sed -e "s,disclaimer,<x>disclaimer</x>,i" |
 while read line; do echo -e "<p>$line</p>"; done
 cat <<.
